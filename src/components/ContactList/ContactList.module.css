@@ -1,5 +1,7 @@
 .list {
-  list-style: none;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 .item {
   display: flex;

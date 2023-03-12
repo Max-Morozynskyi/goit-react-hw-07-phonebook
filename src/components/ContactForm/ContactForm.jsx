@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
-import { createContact } from 'redux/contactsSlice';
+import { createContact } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts).map(a => a.name.toLowerCase());
+  const contacts = useSelector(selectContacts).map(a => a.name.toLowerCase());
 
   const registerTapping = evt => {
     const { name, value } = evt.currentTarget;
